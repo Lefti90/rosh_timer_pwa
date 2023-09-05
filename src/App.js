@@ -70,6 +70,13 @@ function App() {
         `${String(updatedLateMin).padStart(2, '0')}:${String(updatedLateSecValue).padStart(2, '0')}`
       );
     }
+    if(earlySpawnTimer === "00:00"){
+      setRoshanStatus("roshan might be up")
+    }
+
+    if(lateSpawnTimer === "00:00"){
+      setRoshanStatus("roshan is up!")
+    }
   }, [aegisTimer, earlySpawnTimer, lateSpawnTimer]);
 
   useEffect(() => {
