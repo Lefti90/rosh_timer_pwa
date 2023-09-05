@@ -1,22 +1,116 @@
-.App {
+/* fonts */
+
+@font-face {
+  font-family: 'Trajnus';
+  src: local('Trajnus'), url(./fonts/TrajanusBricks.ttf) format('truetype');
+}
+
+.custom-text{
+  font-family: Trajnus, Arial;
+  position: relative;
+  top: 0px;
+  margin-top: 0px;
+}
+
+.custom-text1{
+  font-family: Trajnus, Arial;
+}
+
+.custom-text2{
+  font-family: Trajnus, Arial;
+}
+
+/* divs */
+
+.div1{
   text-align: center;
+  margin: 0px;
+  padding: 10px;
+  width: auto;
+  top: 10px;
+  background-color: #1b1b1b;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/* image size */
+.img-wrap{
+  width: 200px;
+  height: 10px;
+  display: inline;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ .img-wrap > img {
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 1%;
+  min-height: 1%;
+ }
+
+/* images */
+
+.logo_text{
+  margin-top: 10px;
+  margin-bottom: 50px;
+  height: 5em;
+  top: 10px;
+}
+
+.button1{
+  margin: 0.5em;
+  padding: 0px;
+  background-color: #1b1b1b;
+  border: 0px;
+  transition-duration: 200ms;
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 1%;
+  min-height: 1%;
+}
+
+.button1:hover{
+  background-color: #61dafb;
+  color: #1b1b1b;
+}
+
+.button1:active{
+  background-color: red;
+  color: #1b1b1b;
+  transform: translateY(4px);
+}
+
+/* status-text */
+
+.statusText {
+  font-family: Trajnus, Arial;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.green {
+  color: green;
+}
+
+.orange {
+  color: orange;
+}
+
+.red {
+  color: red;
+}
+
+input {
+  font-family: Trajnus, Arial;
+  font-size: 40px;
+  height: 60px;
+  width: 150px;
+  padding: 8;
+  border: 1px solid #ccc;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #1b1b1b;
   min-height: 100vh;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -26,13 +120,4 @@
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
