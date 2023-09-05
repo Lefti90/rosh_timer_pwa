@@ -65,6 +65,8 @@
   max-height: 100%;
   min-width: 1%;
   min-height: 1%;
+  font-family: Trajnus, Arial;
+  font-size: 30px;
 }
 
 .button1:hover{
