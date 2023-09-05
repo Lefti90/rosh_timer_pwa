@@ -162,9 +162,9 @@ function App() {
     <div className="div1">
       <header className="App-header">
         {/* logo */}
-        <img className="logo_text" src="/images/logo_with_text.png" alt="logo_with_text.png"></img>
+        <img className="logo_text" src="/images/logo_256.png" alt="logo_with_text.png"></img>
         {/* gamemode */}
-        <p className='custom-text'>gamemode: <button className="button1" onClick={handleGameMode}>{isToggled ? 'normal' : 'turbo'}</button></p>
+        <p className='custom-text'>gamemode: <button className="button2" onClick={handleGameMode}>{isToggled ? 'normal' : 'turbo'}</button></p>
         
         {/* statustext */}
           <h2 className={`statusText ${statusColors[roshanStatus]}`}>{roshanStatus}</h2>
@@ -176,11 +176,11 @@ function App() {
         </form>
         {/* start timer */}
           <div className="img-wrap">
-            <button className="button1" onClick={handleStartTimerClick}><img src="/images/btn_start_timer.png" alt="start_timer.png"></img></button>
+            <button className="button1" onClick={handleStartTimerClick}><img src="/images/btn_start_timer_256x35.png" alt="start_timer.png"></img></button>
           </div>
         {/* pause timer */}
           <div className="img-wrap">
-            <button className="button1" onClick={copyTimeForClipBoard}><img src="/images/btn_copy_to_clipboard.png" alt="copy.png"></img></button>
+            <button className="button1" onClick={copyTimeForClipBoard}><img src="/images/btn_copy_to_clipboard256x35.png" alt="copy.png"></img></button>
           </div>
         {/* text and timers */}
           <p className="custom-text2">aegis disappears in: <br/> {aegisTime} - {aegisTimer}</p>
@@ -188,7 +188,7 @@ function App() {
           <p className="custom-text2">roshan late spawn: <br/> {lateSpawn} - {lateSpawnTimer}</p>
         {/* stop timer */}
           <div className="img-wrap">
-            <button className="button1" onClick={handleResetClick}><img src="/images/btn_stop_timer.png" alt="stop_timer.png" className="relative_img"></img></button>
+            <button className="button1" onClick={handleResetClick}><img src="/images/btn_stop_timer256x35.png" alt="stop_timer.png" className="relative_img"></img></button>
           </div>
       </header>
     </div>

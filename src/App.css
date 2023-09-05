@@ -33,7 +33,7 @@
 
 
 /* image size */
-.img-wrap{
+/* .img-wrap{
   width: 200px;
   height: 10px;
   display: inline;
@@ -44,7 +44,7 @@
   max-height: 100%;
   min-width: 1%;
   min-height: 1%;
- }
+ } */
 
 /* images */
 
@@ -80,11 +80,36 @@
   transform: translateY(4px);
 }
 
+
+.button2{
+  margin: 0.5em;
+  padding: 0px;
+  border: 0px;
+  transition-duration: 200ms;
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 1%;
+  min-height: 1%;
+  font-family: Trajnus, Arial;
+  font-size: 30px;
+}
+
+.button2:hover{
+  background-color: #61dafb;
+  color: #1b1b1b;
+}
+
+.button2:active{
+  background-color: red;
+  color: #1b1b1b;
+  transform: translateY(4px);
+}
+
 /* status-text */
 
 .statusText {
   font-family: Trajnus, Arial;
-  font-size: 36px;
+  font-size: 2em;
   font-weight: bold;
 }
 
@@ -102,9 +127,9 @@
 
 input {
   font-family: Trajnus, Arial;
-  font-size: 40px;
-  height: 60px;
-  width: 150px;
+  font-size: 1.5em;
+  height: 1.6em;
+  width: 25%;
   padding: 8;
   border: 1px solid #ccc;
 }
