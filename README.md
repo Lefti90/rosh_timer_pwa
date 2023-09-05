@@ -6,4 +6,4 @@
 ###  Get real time info if the roshan is dead, up or might be up
 ###  you can use this with any device or browser
 
-Created by create-react-app
+Created with create-react-app
