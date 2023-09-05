@@ -2,7 +2,8 @@ import './App.css'
 import { useState, useEffect, useCallback } from 'react'
 
 function App() {
-  const [gameMode, setGameMode] = useState("normal") //not yet set up for turbo
+  const [isToggled, setIsToggled] = useState(true);
+  const [gameMode, setGameMode] = useState("turbo") //not yet set up for turbo
   const [roshanStatus, setRoshanStatus] = useState("roshan is up!");
   const [timeOfDeath, setTimeOfDeath] = useState("0000");
   const [aegisTime, setAegisTime] = useState("5:00");
@@ -12,27 +13,34 @@ function App() {
   const [lateSpawn, setLateSpawn] = useState("11:00");
   const [lateSpawnTimer, setLateSpawnTimer] = useState("");
 
+  //for gamemodes
+  const [aegisRate, setAegisRate] = useState("5:00");
+  const [earlyRate, setEarlyRate] = useState("8:00");
+  const [lateRate, setLateRate] = useState("11:00");
+
   const statusColors = {
     "roshan is up!": "green",
     "roshan might be up": "orange",
     "roshan is dead!": "red"
   };
 
-  const aegisRate = "5:00"
-  const earlyRate = "8:00"
-  const lateRate = "11:00"
+    // Function to handle button click and toggle its state
+    const handleGameMode = () => {
+      setGameMode(gameMode === "normal" ? "turbo" : "normal")
+      
   
-  //TODO: set for turbo
-  // if (gameMode === "normal"){
-  //   const aegisRate = "5:00"
-  //   const earlyRate = "8:00"
-  //   const lateRate = "11:00"
-  // } else {
-  //   const aegisRate = "5:00"
-  //   const earlyRate = "8:00"
-  //   const lateRate = "11:00"
-  // }
+        if (gameMode === "normal"){
+          setAegisRate("5:00")
+          setEarlyRate("8:00")
+          setLateRate("11:00")
+        } else {
+          setAegisRate("2:00")
+          setEarlyRate("3:00")
+          setLateRate("8:00")
+        }
 
+        setIsToggled(!isToggled)
+    }  
 
   // Function to update the timers every second
   const updateTimers = useCallback(() => {
@@ -138,16 +146,26 @@ function App() {
 
   //TODO: Pause timer
 
-  const click_handler = () => {
-    console.log('Click')
-    setRoshanStatus("roshan is dead!")
+  //STOP TIMER / RESET
+  const handleResetClick = () => {
+    setRoshanStatus("roshan is up")
+    setAegisTime("5:00")
+    setAegisTimer("");
+    setEarlySpawn("8:00");
+    setEarlySpawnTimer("");
+    setLateSpawn("11:00");
+    setLateSpawnTimer("");
   }
+  
 
   return (
     <div className="div1">
       <header className="App-header">
         {/* logo */}
         <img className="logo_text" src="/images/logo_with_text.png" alt="logo_with_text.png"></img>
+        {/* gamemode */}
+        <p className='custom-text'>gamemode: <button className="button1" onClick={handleGameMode}>{isToggled ? 'normal' : 'turbo'}</button></p>
+        
         {/* statustext */}
           <h2 className={`statusText ${statusColors[roshanStatus]}`}>{roshanStatus}</h2>
         {/* input time */}
@@ -162,17 +180,16 @@ function App() {
           </div>
         {/* pause timer */}
           <div className="img-wrap">
-            <button className="button1" onClick={copyTimeForClipBoard}><img src="/images/btn_pause_timer.png" alt="pause_timer.png"></img></button>
+            <button className="button1" onClick={copyTimeForClipBoard}><img src="/images/btn_copy_to_clipboard.png" alt="copy.png"></img></button>
           </div>
         {/* text and timers */}
           <p className="custom-text2">aegis disappears in: <br/> {aegisTime} - {aegisTimer}</p>
           <p className="custom-text2">roshan early spawn: <br/> {earlySpawn} - {earlySpawnTimer}</p>
-          <p className="custom-text2">roshan early spawn: <br/> {lateSpawn} - {lateSpawnTimer}</p>
+          <p className="custom-text2">roshan late spawn: <br/> {lateSpawn} - {lateSpawnTimer}</p>
         {/* stop timer */}
           <div className="img-wrap">
-            <button className="button1" onClick={click_handler}><img src="/images/btn_stop_timer.png" alt="stop_timer.png" className="relative_img"></img></button>
+            <button className="button1" onClick={handleResetClick}><img src="/images/btn_stop_timer.png" alt="stop_timer.png" className="relative_img"></img></button>
           </div>
-
       </header>
     </div>
   )
